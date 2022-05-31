@@ -1,24 +1,50 @@
-# README
+# blog-app
+This Blog app is a classic example of a blog website. I will be creating a full functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Milestone-1
+- For each URL you should create:
+  - A route.
+  - An action in the correct controller.
+  - A view file.
+- View files should include only placehoulders written in plain HTML, e.g:
+  - Here is a list of post for a given user
 
-Things you may want to cover:
+## Clone Project
+- STEP 1:
+  - git clone `git@github.com:direakanbi/blog-app.git`
+- STEP 2:
+  - `cd blog-app` in your terminal
+- STEP 3:
+  - run `rails server` or `rails s` in your terminal
+- STEP 4:
+  - visit `localhost:3000` on your browser
+> Yeyyy you have the app running **Congratulations** 😅🎉
 
-* Ruby version
+## Technologies Used
+* Language (Ruby on Rails)
+* PostgreSQL
 
-* System dependencies
+## Installation
+* Ruby
+* Rails
+* Postgresql
 
-* Configuration
+## 👤 Author 
+Edward Yara :student: 
+- GitHub: [@direakanbi](https://github.com/direakanbi)
+- Twitter: [@DireAkanbi](https://twitter.com/DireAkanbi)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/dire-akanbi/)
 
-* Database creation
+## Contributing :handshake:
+Contributions, issues, and feature requests are welcome!
 
-* Database initialization
+## Show your support
+Give a 	:star: if you like this project.
 
-* How to run the test suite
+## Acknowledgments
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License :memo:
+This project is [MIT](https://github.com/microverseinc/readme-template/blob/master/MIT.md) licensed
