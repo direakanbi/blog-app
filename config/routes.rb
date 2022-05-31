@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get '/welcome', to: 'welcome#hello'
-  root to: "welcome#hello"
+  root "users#index"
+
+  resources :users, only: %i[index show]
+  resources :posts, only: %i[index show]
 end
