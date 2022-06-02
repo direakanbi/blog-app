@@ -21,7 +21,7 @@ This Blog app is a classic example of a blog website. I will be creating a full 
 > Yeyyy you have the app running **Congratulations** 😅🎉
 
 ## Run test suits
-  > rspec spec
+  > rspec
 
 ## Technologies Used
 * Language (Ruby on Rails)
