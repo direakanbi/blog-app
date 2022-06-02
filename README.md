@@ -20,6 +20,9 @@ This Blog app is a classic example of a blog website. I will be creating a full 
   - visit `localhost:3000` on your browser
 > Yeyyy you have the app running **Congratulations** 😅🎉
 
+## Run test suits
+  > rspec spec
+
 ## Technologies Used
 * Language (Ruby on Rails)
 * PostgreSQL
