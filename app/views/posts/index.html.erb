@@ -1,8 +1,9 @@
 <div class="user_container">
+  <div class="btn_post_field">
+    <button type="button" class="all_post_btn"><%= link_to "Create post", new_user_post_path %></button>
+  </div>
+
   <section class="user_field">
-    <article class="photo_field">
-      <img src="<%= @user.photo %>" alt="">
-    </article>
     <article class="user_desc">
       <h2> <%= @user.name %> </h2>
       <p class="post_counter_field"> posts status: <%= @user.posts.length %> </p>
@@ -40,6 +41,7 @@
   </article>
   </section>
 <% end %>
+
   <div class="pagination">
     <button type="submit" class="pagination_btn"> Pagination </button>
   </div>

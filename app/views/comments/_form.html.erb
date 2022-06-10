@@ -1,0 +1,11 @@
+<section>
+    <%= form_with model: [@post, @post.comments.build], method: :post, local: true do |form| %>
+        <div>
+            <%= form.label :text, "comment" %>
+            <%= form.form_area :text, size: "50x5", required: true %>
+            <%= form.submit "Add Comment", data: { disable_with: "Adding comment..." } %>
+        </div>
+    <% end %>
+    
+    <%= render "likes/form" %>
+</section>

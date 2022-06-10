@@ -169,6 +169,83 @@ a {
   width: 95%;
 }
 
+.post_like_btn {
+  color: #333;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.like_cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.comment_field {
+  margin: 5em 20em;
+}
+
+.comment_create_field {
+  border: 3px solid #333;
+  padding: 10px;
+  height: 100px;
+  font-family: sans-serif;
+  width: 100%;
+}
+
+.comment_btn {
+  display: flex;
+  margin: 2em 3em;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.create_post_title_cont {
+  text-align: center;
+}
+
+.form_content {
+  margin: 5em 50em;
+}
+
+.title_label {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.title_field {
+  padding: 15px;
+  border-bottom: 2px solid #333;
+}
+
+.text_area_label {
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.text_area_field {
+  border: 2px solid #333;
+  padding: 5px;
+  font-family: sans-serif;
+}
+
+.btn_create_post {
+  padding: 10px;
+  color: #fff;
+  background-color: rgb(53, 53, 180);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn_create_post:hover {
+  background-color: rgb(69, 69, 189);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width: 600px) {
   .user_container {
     margin: 1em 2em;
@@ -242,5 +319,21 @@ a {
     padding: 5px;
     margin: 5px;
     width: 95%;
+  }
+
+  .comment_field {
+    margin: 1em 1em;
+  }
+
+  .form_content {
+    margin: 5em 1em;
+    text-align: center;
+  }
+
+  .text_area_field {
+    border: 2px solid #333;
+    padding: 5px;
+    width: 200px;
+    font-family: sans-serif;
   }
 }
