@@ -1,19 +1,18 @@
-<h2 class="create_post_title_cont"> Add A New Post </h2>
+<section class="container">
+    <h2 class="text-center mt-4">Create New Post</h2>
 
-<section class="form_content">
     <%= form_with model: @post, url: user_posts_path, scope: :post do |form| %>
-        <div class="post_title">
-            <p class="title_label"><%= form.label :title, "Title" %></p>
-            <p class=""><%= form.text_field :title, class: 'title_field', required: true %></p>
+        <div class="form-group">
+            <%= form.label :title, "Title", class: 'fs-5 fw-bolder' %>
+            <%= form.text_field :title, placeholder: "Title", required: true, class: 'form-control w-20' %>
         </div>
 
-        <div clss="post_desc">
-            <p class="text_area_label"><%= form.label :text, "What is this post about?" %></p>
-            <p class=""><%= form.text_area :text, class: 'text_area_field', size: "40x10", required: true %></p>
-        </div>
+        <div>
+            <%= form.text_area :text, placeholder: 'Type here...', rows: 10, required: true, class: 'form-control mt-5' %></div>
+        <div>
 
-        <div class="">
-            <span><%= form.submit "Add Post", data: { disable_with: "Adding post..." }, class: 'btn_create_post' %></span>
+        <div>
+            <%= form.submit "Post", class: 'mt-4 btn btn-primary'  %>
         </div>
     <% end %>
 </section>

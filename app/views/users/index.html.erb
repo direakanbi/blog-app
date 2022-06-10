@@ -1,16 +1,16 @@
-<div class="user_container">
-  <h2 class="user_title_txt"> Here is a list of all Users </h2>
-  <% @user.each do |user| %>
-    <section class="user_field">
-        <article class="photo_field">
-            <img src="<%= user.photo %>">
+<div class="container mt-5">
+  <h2 class="text-center fs-8"> Here is a list of all users </h2>
+  <% @users.each do |user| %>
+    <section class="d-flex m-4 justify-content-evenly">
+        <article class="border border-secondary border-3 p-5">
+            <%= image_tag("") %>
         </article>
-        <article class="user_desc">
-            <%= link_to user_path(user.id) do %>
-                <h1 class="user_name"> <%= user.name %> </h1>
+        <article class="border border-secondary border-3 p-3 w-50">
+            <%= link_to user_path(user) do %>
+                <h1 class="fs-5 text-uppercase"> <%= user.name %> </h1>
             <% end %>
 
-            <p class="post_counter_field"> Number of posts: <%= user.post_counter || 0 %> </p>
+            <p class="d-flex justify-content-end fw-semibold text-secondary"> Number of posts: <span class="fw-bolder"><%= user.post_counter || 0 %></span> </p>
         </article>
     </section>
   <% end %>

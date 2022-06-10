@@ -1,51 +1,36 @@
-<div class="user_container">
-  <section class="post_show_cont">
-  <article class="post_show">
-    <div class="post_show_field">
-      <h4 class="post_show_title"> <%= @post.title %> by <%= @user.name %> </h4>
+<div class="container mt-5">
+  <section>
+    <article class="border border-secondary border-3 p-4">
+      <div class="d-flex align-items-center justify-content-between">
+        <h4 class="fs-5"> <%= @post.title %> by <%= @user.name %> </h4>
 
-      <p class="span_field"> Comments : <%= @post.comments.size %> Likes : <%= @post.likes.size %> </p>
-    </div>
-
-    <div>
-      <p> <%= @post.text %> </p>
-    </div>
-  </article>
-
-  <article class="span_comment_field">
-    <div>
-      <% @post.five_most_recent_comments.each do |comment| %>
-      <div>
-        <li> <%= comment.users.name %>: <%= comment.text %> </li>
+        <p class="fs-5 text-secondary"> Comments : <span class="fw-bolder"><%= @post.comments_counter || 0 %></span>, Likes : <span class="fw-bolder"><%= @post.likes_counter || 0 %></span></p>
       </div>
-      <% end %>
-    </div>
-  </article>
 
-  <article class="like_cont">
-    <div>
-      <%= form_with url: "#{@post.id}/likes" do |form| %>
-        <button type="submit" class="post_like_btn"> 👍 </button>
-      <% end %>
-    </div>
+      <div class="mt-3">
+        <p> <%= @post.text %> </p>
+      </div>
+    </article>
 
-    <div>
-      <%= form_with url: "#{@post.id}/likes" do |form| %>
-        <button type="submit" class="post_like_btn"> 👎 </button>
-      <% end %>
-    </div>
-  </article>
-
-  <div class="comment_field">
-    <%= form_with url: "#{@post.id}/comments", scope: :comment do |form| %>
-      <div class="">
-        <%= form.text_area :text, placeholder: "Type something here...", class: 'comment_create_field', row: 14, required: true %>
+    <article>
+      <div>
+        <%= form_with url: "#{@post.id}/likes" do |form| %>
+          <%= form.submit "Like" %>
+        <% end %>
       </div>
 
       <div>
-        <button type="submit" class="comment_btn"> Comment </button>
+        <% @post.comments.each do |comment| %>
+          <p><%= comment.user.name %> : <%= comment.text %></p>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+
+      <div>
+        <%= form_with url: "#{@post.id}/comments", scope: :comment do |form| %>
+          <%= form.text_area :text, placeholder: "Type something here...", rows: 14, required: true %>
+          <%= form.submit "Comment" %>
+        <% end %>
+      </div>
+    </article>
   </section>
 </div>

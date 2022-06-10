@@ -1,20 +1,20 @@
-<div class="user_container">
-  <h2 class="user_title_txt"> Users profile number <%= params[:id] %> </h2>
-  <section class="user_field">
+<div class="container mt-3">
+  <h2 class="text-center"> Users profile number <%= params[:id] %> </h2>
+  <section class="d-flex m-4 justify-content-between">
 
-    <article class="photo_field">
-      <img src="<%= @user.photo %>">
+    <article class="border border-secondary border-3 p-5">
+      <%= image_tag("") %>
     </article>
 
-    <article class="user_desc">
-      <h1 class="user_name"> <%= @user.name %> </h1>
+    <article class="border border-secondary border-3 p-3 w-50">
+      <h1 class="fs-5 text-uppercase fw-bolder"> <%= @user.name %> </h1>
 
-      <p class="post_counter_field"> Number of posts: <span class="fw-bolder"><%= @user.post_counter || 0 %></span> </p>
+      <p class="d-flex justify-content-end text-secondary"> Number of posts: <span class="fw-bolder"><%= @user.post_counter || 0 %></span> </p>
     </article>
 
   </section>
 
-  <section class="user_bio">
+  <section class="border border-secondary p-4 border-3 mt-5 rounded">
     <h2> Bio </h2>
 
     <p> <%= @user.bio %> </p>
@@ -22,25 +22,25 @@
 
   <section>
     <% @user.three_most_recent_posts.each do |post| %>
-      <article class="post_field">
+      <article class="border border-secondary border-3 rounded mt-3 p-2">
 
-        <%= link_to user_post_path(@user.id, post.id), id: "user_post #{post.id}" do %>
+        <%= link_to user_posts_path(@user.id, post.id) do %>
           <h4> <%= post.title %> </h4>
         <% end %>
 
         <p> <%= post.text %> </p>
         
-        <div class="span_field">
-          <p class="comment"> Comments: <span class=""><%= post.comments_counter || 0 %></span> </p>
+        <div class="d-flex justify-content-end">
+          <p class="p-2"> Comments: <span class="fw-bolder"><%= post.comments_counter || 0 %>, </span> </p>
 
-          <p class="like"> Likes: <span class=""><%= post.likes_counter || 0 %></span> </p>
+          <p class="p-2"> Likes: <span class="fw-bolder"><%= post.likes_counter || 0 %></span> </p>
         </div>
 
       </article>
     <% end %>
   </section>
 
-    <div class="btn_post_field">
-      <button type="submit" class="all_post_btn"> <%= link_to 'See all posts', user_posts_path(@user) %> </button>
+    <div class="d-flex fixed-bottom justify-content-center mb-4">
+      <button type="submit" class="btn-default rounded p-2 fs-7"> <%= link_to 'See all posts', user_posts_path(@user.id) %> </button>
     </div>
 </div>

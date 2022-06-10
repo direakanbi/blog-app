@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @user = User.includes(:posts).find(params[:user_id])
-    @posts = @user.posts.includes(:comments)
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
   end
 
   def new
@@ -14,23 +14,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
-    @post.likes_counter = 0
-    @post.comments_counter = 0
+    new_post = current_user.posts.new(params.require(:post).permit(:title, :text))
+    new_post.likes_counter = 0
+    new_post.comments_counter = 0
     respond_to do |format|
       format.html do
-        if @post.save
-          redirect_to user_posts_url(current_user, @posts), notice: 'Post Saved Successfully'
+        if new_post.save
+          redirect_to "/users/#{new_post.users.id}/posts"
         else
-          render :new, alert: 'Sorry, something went wrong'
+          render :new
         end
       end
     end
-  end
-
-  private
-
-  def post_params
-    params.require(:post).permit(:title, :text)
   end
 end
