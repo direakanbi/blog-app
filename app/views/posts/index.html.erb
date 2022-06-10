@@ -1,1 +1,46 @@
-<h1> Here is a list of posts </h1>
+<div class="user_container">
+  <section class="user_field">
+    <article class="photo_field">
+      <img src="<%= @user.photo %>" alt="">
+    </article>
+    <article class="user_desc">
+      <h2> <%= @user.name %> </h2>
+      <p class="post_counter_field"> posts status: <%= @user.posts.length %> </p>
+    </article>
+  </section>
+
+<% @user.posts.each do |post| %>
+  <section class="">
+  <article class="post_field">
+    <%= link_to user_post_path(@user.id, post.id), id: "user_post #{post.id}" do %>
+      <h4> <%= post.title %> </h4>
+    <% end %>
+
+    <p> <%= post.text %> </p>
+
+    <div>
+      <div>
+        <span class="span_field"> Comments: <%= post.comments.size %> </span>
+      </div>
+    </div>
+  </article>
+
+  <article class="span_comment_fieldII">
+    <div>
+      <% unless post.comments.empty? %>
+        <div>
+          <% post.five_most_recent_comments.each do |comment| %>
+            <div>
+              <li> <%= comment.users.name %> : <%= comment.text %> </li>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </article>
+  </section>
+<% end %>
+  <div class="pagination">
+    <button type="submit" class="pagination_btn"> Pagination </button>
+  </div>
+</div>

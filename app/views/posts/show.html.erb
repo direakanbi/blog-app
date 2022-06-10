@@ -1,1 +1,25 @@
-<h2> Here is the list of posts for this user </h2>
+<div class="user_container">
+  <section class="post_show_cont">
+  <article class="post_show">
+    <div class="post_show_field">
+      <h4 class="post_show_title"> <%= @post.title %> by <%= @user.name %> </h4>
+
+      <p class="span_field"> Comments : <%= @post.comments.size %> Likes : <%= @post.likes.size %> </p>
+    </div>
+
+    <div>
+      <p> <%= @post.text %> </p>
+    </div>
+  </article>
+
+  <article class="span_comment_field">
+    <div>
+      <% @post.five_most_recent_comments.each do |comment| %>
+      <div>
+        <li> <%= comment.users.name %>: <%= comment.text %> </li>
+      </div>
+      <% end %>
+    </div>
+  </article>
+  </section>
+</div>
