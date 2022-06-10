@@ -171,34 +171,34 @@ a {
 
 @media (max-width: 600px) {
   .user_container {
-    margin: 0em 2em;
+    margin: 1em 2em;
   }
-  
+
   .user_title_txt {
     text-align: center;
     margin-top: 20px;
     font-size: 25px;
   }
-  
+
   .user_field {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  
+
   .photo_field {
     border: 3px solid #333;
     padding: 40px;
     margin: 10px;
   }
-  
+
   .user_desc {
     border: 3px solid #333;
     padding: 5px;
     margin: 10px;
     width: 100%;
   }
-  
+
   .post_counter_field {
     display: flex;
     justify-content: end;
@@ -209,15 +209,15 @@ a {
   .user_bio {
     border: 3px solid #333;
     padding: 5px;
-    margin: 0px;
+    margin: 0;
     width: 95%;
     margin-top: 30px;
   }
-  
+
   .post_field {
     border: 3px solid #333;
     padding: 10px;
-    margin: 0px;
+    margin: 0;
     width: 92%;
     margin-top: 10px;
   }
@@ -225,15 +225,22 @@ a {
   .post_show {
     border: 3px solid #333;
     padding: 5px;
-    margin: 0px;
+    margin: 0;
     width: 100%;
   }
-  
+
   .span_comment_field {
     border: 3px solid #333;
     padding: 5px;
-    margin: 0px;
+    margin: 0;
     margin-top: 10px;
     width: 100%;
+  }
+
+  .span_comment_fieldII {
+    border: 3px solid #333;
+    padding: 5px;
+    margin: 5px;
+    width: 95%;
   }
 }
