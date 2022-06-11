@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Blaka&family=Lobster&family=Poppins:wght@200&family=Roboto:wght@300;700&family=Signika+Negative&display=swap');
+
+ ul {
+  padding: 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-body {
+  width: 90%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 900px) {
+  .w-100-mobile {
+    width: 100% !important;
+  }
+}
+
+.trash-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+}
+
+.no-style {
+  text-decoration: none;
+  color: unset;
+}
