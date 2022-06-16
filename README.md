@@ -33,7 +33,7 @@ This Blog app is a classic example of a blog website. I will be creating a full 
 * Postgresql
 
 ## 👤 Author 
-Edward Yara :student: 
+Dire Akanbi :student: 
 - GitHub: [@direakanbi](https://github.com/direakanbi)
 - Twitter: [@DireAkanbi](https://twitter.com/DireAkanbi)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/dire-akanbi/)
