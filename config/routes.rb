@@ -1,12 +1,21 @@
 Rails.application.routes.default_url_options[:host] = "XXX"
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   devise_for :users
-  root to: 'users#index'
+  root 'authors#index'
 
-  resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show, :new, :create, :destroy] do
-      resources :comments, only: [:new, :create, :destroy]
-      resources :likes, only: [:new, :create]
+  resources :authors, only:[:index, :show] do
+    resources :posts, only:[:index, :show] do
+      resources :comments, only: [:create, :index, :new]
     end
   end
+
+  resources :posts, only:[:create, :new, :edit, :destroy]
+  resources :comments, only:[:edit, :destroy]
+  post 'posts/:id/like', to: 'likes#index', as: 'like_action'
+
+  # resources :posts, only:[:create, :new, :edit, :destroy]
+  # resources :comments, only:[:edit, :destroy]
+  # post 'posts/:id/like', to: 'likes#index', as: 'like_action'
 end

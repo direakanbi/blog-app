@@ -29,6 +29,8 @@ gem 'ffi'
 
 gem 'tzinfo-data'
 
+gem 'rswag'
+
 gem 'bootsnap', require: false
 
 gem 'rubocop', '>= 1.0', '< 2.0'
@@ -39,6 +41,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 5.1'
   gem 'rspec-rails'
+  gem 'rswag-specs'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

@@ -1,0 +1,58 @@
+<div class='blog-card'>
+  <div class='d-flex justify-content-between'>
+    <div class='d-flex align-items-end mb-2'>
+      <h2 class='mb-0'>
+        <%= link_to post.title, author_post_path(post.author.id, post.id) %>
+      </h2>
+      <% unless index_view %>
+        <span>
+          <%= link_to " by #{post.author.name}", author_posts_path %>
+        </span>
+      <% end %>
+    </div>
+
+    <div class='text-end d-flex flex-column justify-content-between'>
+      <div>
+      <% if current_user&.id == post.author_id %>
+        <label for="delete-post-<%=post.id%>">
+          <i class="fa-solid fa-trash cursor-pointer" aria-hidden="true"></i>
+        </label>
+        <%= button_to '', post_path(post.id), method: :delete, class: 'd-none', id: "delete-post-#{post.id}" %>
+      <% end %>
+      </div>
+      <div>
+        <span><%= t('comments')%> <%= post.comments_counter || 0 %></span>
+        <span><%= t('likes')%> </span><%= render partial: 'posts/likes', locals: {post: post} %>
+      </div>
+    </div>
+  </div>
+  <div><%= post.text %></div>
+  
+  <% if post.comments_counter.to_i > 0 and show_comment %>
+    <div>
+      <% if index_view %>
+        <% post.comments_with_author_names.each { |comment_| %>
+          <%= render partial: 'comment', object: comment_ %>
+        <% } %>
+      <% else %>
+        <% post.comments_with_author_names(nil).each { |comment_| %>
+          <%= render partial: 'comment', object: comment_ %>
+        <% } %>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>
+
+<script>
+  function send_like(id){
+    console.log('hi', id)  
+    fetch(`/posts/${id}/like`, {method: 'POST'})
+      .then(res=>res.json())
+      .then(res=>{
+        const {post_likes_count} = res
+        const el_likes_count = document.querySelector(`#likes_count_${id}`)
+        el_likes_count.innerText = post_likes_count
+  })
+  }
+</script>
