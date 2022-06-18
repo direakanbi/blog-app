@@ -33,10 +33,18 @@ This Blog app is a classic example of a blog website. I will be creating a full 
 * Postgresql
 
 ## 👤 Author 
-Edward Yara :student: 
+Dire Akanbi :student: 
 - GitHub: [@direakanbi](https://github.com/direakanbi)
 - Twitter: [@DireAkanbi](https://twitter.com/DireAkanbi)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/dire-akanbi/)
+
+## 👤 Author2
+Salim Abdulai
+
+- GitHub: [@RayhanTabase](https://github.com/RayhanTabase)
+- Twitter: [@RayhanTabase](https://twitter.com/@RayhanTabase)
+- LinkedIn: [Salim-Abdulai](https://linkedin.com/in/salim-abdulai-5430065b)
+- Email: salimabdulai2@yahoo.com
 
 ## Contributing :handshake:
 Contributions, issues, and feature requests are welcome!
