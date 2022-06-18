@@ -7,7 +7,7 @@ module ApplicationHelper
     user.posts.count > limit_
   end
 
-  def flash_messages_for(object)
+  def flash_messages_for(_object)
     render(partial: 'layout/flash', locals: ' object: ')
   end
 
