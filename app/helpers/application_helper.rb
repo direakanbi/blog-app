@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def flash_messages_for(object)
-    render(partial: 'layout/flash', locals: { object: })
+    render(partial: 'layout/flash', locals: ' object: ')
   end
 
   def image_control(image_url)
