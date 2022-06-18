@@ -1,46 +1,27 @@
-<div class="user_container">
-  <h2 class="user_title_txt"> Users profile number <%= params[:id] %> </h2>
-  <section class="user_field">
-
-    <article class="photo_field">
-      <img src="<%= @user.photo %>">
-    </article>
-
-    <article class="user_desc">
-      <h1 class="user_name"> <%= @user.name %> </h1>
-
-      <p class="post_counter_field"> Number of posts: <span class="fw-bolder"><%= @user.post_counter || 0 %></span> </p>
-    </article>
-
-  </section>
-
-  <section class="user_bio">
-    <h2> Bio </h2>
-
-    <p> <%= @user.bio %> </p>
-  </section>
-
-  <section>
-    <% @user.three_most_recent_posts.each do |post| %>
-      <article class="post_field">
-
-        <%= link_to user_post_path(@user.id, post.id), id: "user_post #{post.id}" do %>
-          <h4> <%= post.title %> </h4>
-        <% end %>
-
-        <p> <%= post.text %> </p>
-        
-        <div class="span_field">
-          <p class="comment"> Comments: <span class=""><%= post.comments_counter || 0 %></span> </p>
-
-          <p class="like"> Likes: <span class=""><%= post.likes_counter || 0 %></span> </p>
-        </div>
-
-      </article>
+<div class="center flex-column m-3">
+  <%= link_to "Create Post", "/users/:user_id/posts/new"%>
+  <%= render partial: "shared/user", locals: {user: @user}%>
+  <div class="w-50 w-100-mobile mb-3 bg-light p-2 border">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
+  <div class="d-flex flex-column w-50 w-100-mobile">
+    <% @user.recent_posts.each do |post| %>
+      <div class="d-flex flex-column bg-light p-2 border mb-3">
+        <h5><%= link_to post.title, user_post_path(@user, post.id), class: "no-style" %></h5>
+        <p><%= post.text %></p>
+        <p class="small align-self-end">
+          Comments
+          <span class="badge bg-secondary">
+            <%= post.comments_counter %>
+          </span>
+          Likes
+          <span class="badge bg-secondary">
+            <%= post.likes_counter %>
+          </span>
+        </p>
+      </div>
     <% end %>
-  </section>
-
-    <div class="btn_post_field">
-      <button type="submit" class="all_post_btn"> <%= link_to 'See all posts', user_posts_path(@user) %> </button>
-    </div>
+  </div>
+  <%= link_to "See all posts" , user_posts_path(@user.id), class: "btn btn-primary" %>
 </div>

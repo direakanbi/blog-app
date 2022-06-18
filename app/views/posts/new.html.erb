@@ -1,19 +1,20 @@
-<h2 class="create_post_title_cont"> Add A New Post </h2>
-
-<section class="form_content">
-    <%= form_with model: @post, url: user_posts_path, scope: :post do |form| %>
-        <div class="post_title">
-            <p class="title_label"><%= form.label :title, "Title" %></p>
-            <p class=""><%= form.text_field :title, class: 'title_field', required: true %></p>
-        </div>
-
-        <div clss="post_desc">
-            <p class="text_area_label"><%= form.label :text, "What is this post about?" %></p>
-            <p class=""><%= form.text_area :text, class: 'text_area_field', size: "40x10", required: true %></p>
-        </div>
-
-        <div class="">
-            <span><%= form.submit "Add Post", data: { disable_with: "Adding post..." }, class: 'btn_create_post' %></span>
-        </div>
-    <% end %>
-</section>
+<div class="container">
+  <%= form_with model: @post, url: user_posts_path, data: {turbo: false } do |form| %>
+  <% if @post.errors.any? %>
+    <div class="alert alert-danger mt-4" role="alert">
+      <% @post.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+    <div class="mb-3">
+      <%= form.label :title, "Title:", class: "form-label" %>
+      <%= form.text_field :title, class: "form-control", placeholder: "Misty Mountains Cold" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :text, class: "form-label" %>
+      <%= form.text_area :text, class: "form-control", placeholder: "The best place in Middle-earth" %>
+    </div>
+    <%= form.submit "Create Post", class: "btn btn-primary" %>
+  <% end %>
+</div>
