@@ -1,15 +1,339 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.user_container {
+  margin: 2em 25em;
+}
+
+.user_title_txt {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.user_field {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.user_show_field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.photo_field {
+  border: 3px solid #333;
+  padding: 50px;
+  margin: 20px;
+}
+
+.user_desc {
+  border: 3px solid #333;
+  padding: 10px;
+  margin: 20px;
+  width: 100%;
+}
+
+.post_counter_field {
+  display: flex;
+  justify-content: end;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.user_name {
+  font-size: 20px;
+  color: #333;
+}
+
+.user_name:hover {
+  color: rgb(52, 52, 161);
+}
+
+.user_bio {
+  border: 3px solid #333;
+  padding: 10px;
+  margin: 20px;
+  width: 95%;
+}
+
+.post_field {
+  border: 3px solid #333;
+  padding: 10px;
+  margin: 20px;
+  width: 95%;
+}
+
+.post_btn {
+  display: flex;
+  margin: auto;
+  margin-top: 40px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(69, 69, 189);
+  border: none;
+  border-radius: 5px;
+}
+
+.post_btn > a {
+  color: #efefef;
+  font-size: 15px;
+}
+
+.post_btn:hover {
+  background-color: rgb(53, 53, 180);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+.span_field {
+  display: flex;
+  justify-content: end;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.comment {
+  padding: 5px;
+}
+
+.like {
+  padding: 5px;
+}
+
+.btn_post_field {
+  display: flex;
+  justify-content: center;
+}
+
+.all_post_btn {
+  padding: 10px;
+  color: #fff;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination_btn {
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: rgb(53, 53, 180);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.pagination_btn:hover {
+  background-color: rgb(69, 69, 189);
+  color: #efefef;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+.post_show_field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post_show_cont {
+  margin-top: 40px;
+}
+
+.post_show {
+  border: 3px solid #333;
+  padding: 10px;
+  margin: 20px;
+  width: 100%;
+}
+
+.span_comment_field {
+  border: 3px solid #333;
+  padding: 10px;
+  margin: 20px;
+  width: 100%;
+}
+
+.span_comment_fieldII {
+  border: 3px solid #333;
+  padding: 10px;
+  margin: 20px;
+  width: 95%;
+}
+
+.post_like_btn {
+  color: #333;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.like_cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.comment_field {
+  margin: 5em 20em;
+}
+
+.comment_create_field {
+  border: 3px solid #333;
+  padding: 10px;
+  height: 100px;
+  font-family: sans-serif;
+  width: 100%;
+}
+
+.comment_btn {
+  display: flex;
+  margin: 2em 3em;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.create_post_title_cont {
+  text-align: center;
+}
+
+.form_content {
+  margin: 5em 50em;
+}
+
+.title_label {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.title_field {
+  padding: 15px;
+  border-bottom: 2px solid #333;
+}
+
+.text_area_label {
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.text_area_field {
+  border: 2px solid #333;
+  padding: 5px;
+  font-family: sans-serif;
+}
+
+.btn_create_post {
+  padding: 10px;
+  color: #fff;
+  background-color: rgb(53, 53, 180);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn_create_post:hover {
+  background-color: rgb(69, 69, 189);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .user_container {
+    margin: 1em 2em;
+  }
+
+  .user_title_txt {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+  }
+
+  .user_field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .photo_field {
+    border: 3px solid #333;
+    padding: 40px;
+    margin: 10px;
+  }
+
+  .user_desc {
+    border: 3px solid #333;
+    padding: 5px;
+    margin: 10px;
+    width: 100%;
+  }
+
+  .post_counter_field {
+    display: flex;
+    justify-content: end;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .user_bio {
+    border: 3px solid #333;
+    padding: 5px;
+    margin: 0;
+    width: 95%;
+    margin-top: 30px;
+  }
+
+  .post_field {
+    border: 3px solid #333;
+    padding: 10px;
+    margin: 0;
+    width: 92%;
+    margin-top: 10px;
+  }
+
+  .post_show {
+    border: 3px solid #333;
+    padding: 5px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .span_comment_field {
+    border: 3px solid #333;
+    padding: 5px;
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .span_comment_fieldII {
+    border: 3px solid #333;
+    padding: 5px;
+    margin: 5px;
+    width: 95%;
+  }
+
+  .comment_field {
+    margin: 1em 1em;
+  }
+
+  .form_content {
+    margin: 5em 1em;
+    text-align: center;
+  }
+
+  .text_area_field {
+    border: 2px solid #333;
+    padding: 5px;
+    width: 200px;
+    font-family: sans-serif;
+  }
+}

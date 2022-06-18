@@ -1,1 +1,17 @@
-<h1> Here is the users home page </h1>
+<div class="user_container">
+  <h2 class="user_title_txt"> Here is a list of all Users </h2>
+  <% @user.each do |user| %>
+    <section class="user_field">
+        <article class="photo_field">
+            <img src="<%= user.photo %>">
+        </article>
+        <article class="user_desc">
+            <%= link_to user_path(user.id) do %>
+                <h1 class="user_name"> <%= user.name %> </h1>
+            <% end %>
+
+            <p class="post_counter_field"> Number of posts: <%= user.post_counter || 0 %> </p>
+        </article>
+    </section>
+  <% end %>
+</div>
