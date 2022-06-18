@@ -1,0 +1,20 @@
+
+<section class="">
+  <%= render partial: 'authors/user', object: @user %>
+  <div class='blog-card'>
+    <h2><%= t("bio")%></h2>
+    <div><%= @user.bio %></div>
+  </div>
+</section>
+<section>
+  <div>
+  <% @user_posts.each_with_index { |post_, index_| %>
+    <%= render partial: 'posts/post', locals:{post: post_, index: index_ , index_view: true, show_comment: false} %>
+  <% } %>
+  </div>
+  <% if author_posts_more_than?(@user) then %>
+    <div class='text-center mt-3'>
+      <%= link_to t("see_all"), author_posts_path(:author_id=>@user.id), class:'btn btn-secondary' %>
+    </div>
+  <% end %>
+</section>

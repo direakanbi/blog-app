@@ -1,0 +1,10 @@
+<%= form_with url: author_post_comments_url(params[:author_id], params[:id]), scope: :comment do |f| %>
+
+<div>
+  <%= f.hidden_field  :post_id, :value => params[:id] %>
+  <%= f.label 'Comment', class: 'control-label' %><br>
+  <%= f.text_area :text, size:"100x2", required: true, class:'form-control' %>
+</div>
+
+<%= f.submit "Add Comment", class: "btn btn-primary", data: {disable_with: "Loading..."} %>
+<% end  %>

@@ -1,0 +1,8 @@
+<span id="<%= 'likes_count_' + post.id.to_s %>"><%= post.likes_counter || 0 %></span>
+<label for= "like-post-<%= post.id %>">
+  <i class="fa-solid fa-heart cursor-pointer <%= post.user_liked_this_post?(current_user&.id) ? "text-danger" : ""%>" aria-hidden="true"></i>
+</label>
+<%= button_to('like', like_action_path(post.id), 
+    id: "like-post-#{post.id}", 
+    class: 'd-none') 
+%>

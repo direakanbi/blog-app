@@ -1,0 +1,12 @@
+<div>
+<%= comment.author.name %>: <%= comment.text %>
+  <span>
+      <% if current_user&.id == comment.author_id %>
+        <label for="delete-comment-<%=comment.id%>">
+          <i class="fa-solid fa-trash cursor-pointer" aria-hidden="true"></i>
+        </label>
+        <%= button_to '', comment_path(comment.id), method: :delete, class: 'd-none', id: "delete-comment-#{comment.id}" %>
+      <% end %>
+  </span>
+
+</div>
